@@ -1,8 +1,8 @@
-export default function UserInput() {
+export default function UserInput({ children }) {
   return (
     <div className="input-group">
       <label htmlFor="">
-        INITIAL INVESTMENT
+        {children}
         <input type="number" />
       </label>
     </div>

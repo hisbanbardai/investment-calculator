@@ -6,10 +6,10 @@ function App() {
   return (
     <>
       <div id="user-input">
-        <UserInput />
-        <UserInput />
-        <UserInput />
-        <UserInput />
+        <UserInput>INITIAL INVESTMENT</UserInput>
+        <UserInput>ANNUAL INVESTMENT</UserInput>
+        <UserInput>EXPECTED RETURN</UserInput>
+        <UserInput>DURATION</UserInput>
       </div>
       <Result />
     </>
