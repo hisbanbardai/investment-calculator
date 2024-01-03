@@ -2,26 +2,26 @@ export default function Calculator() {
   return (
     <div id="user-input">
       <div className="input-group">
-        INITIAL INVESTMENT
         <label htmlFor="">
+          INITIAL INVESTMENT
           <input type="number" />
         </label>
       </div>
       <div className="input-group">
-        ANNUAL INVESTMENT
         <label htmlFor="">
+          ANNUAL INVESTMENT
           <input type="number" />
         </label>
       </div>
       <div className="input-group">
-        EXPECTED RETURN
         <label htmlFor="">
+          EXPECTED RETURN
           <input type="number" />
         </label>
       </div>
       <div className="input-group">
-        DURATION
         <label htmlFor="">
+          DURATION
           <input type="number" />
         </label>
       </div>
