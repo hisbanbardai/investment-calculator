@@ -36,10 +36,10 @@ export default function Result({
           return (
             <tr key={year}>
               <td>{year}</td>
-              <td>{valueEndOfYear}</td>
-              <td>{interest}</td>
-              <td>{totalInterest}</td>
-              <td>{investedCapital}</td>
+              <td>{Math.round(valueEndOfYear)}</td>
+              <td>{Math.round(interest)}</td>
+              <td>{Math.round(totalInterest)}</td>
+              <td>{Math.round(investedCapital)}</td>
             </tr>
           );
         })}
