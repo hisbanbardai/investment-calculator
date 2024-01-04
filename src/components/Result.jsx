@@ -1,4 +1,4 @@
-import { calculateInvestmentResults } from "../util/investment";
+import { calculateInvestmentResults, formatter } from "../util/investment";
 
 export default function Result({
   initialInvestment,
@@ -36,10 +36,10 @@ export default function Result({
           return (
             <tr key={year}>
               <td>{year}</td>
-              <td>{Math.round(valueEndOfYear)}</td>
-              <td>{Math.round(interest)}</td>
-              <td>{Math.round(totalInterest)}</td>
-              <td>{Math.round(investedCapital)}</td>
+              <td>{formatter.format(Math.round(valueEndOfYear))}</td>
+              <td>{formatter.format(Math.round(interest))}</td>
+              <td>{formatter.format(Math.round(totalInterest))}</td>
+              <td>{formatter.format(Math.round(investedCapital))}</td>
             </tr>
           );
         })}
