@@ -1,4 +1,23 @@
-export default function Result() {
+import { calculateInvestmentResults } from "../util/investment";
+
+export default function Result({
+  initialInvestment,
+  annualInvestment,
+  expectedReturn,
+  duration,
+}) {
+  // console.log("result", result);
+
+  const results = calculateInvestmentResults({
+    initialInvestment,
+    annualInvestment,
+    expectedReturn,
+    duration,
+  });
+
+  let totalInterest = 0;
+  let investedCapital = initialInvestment;
+
   return (
     <table id="result">
       <thead>
@@ -10,7 +29,21 @@ export default function Result() {
           <th>Invested Capital</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        {results.map(({ year, interest, valueEndOfYear, annualInvestment }) => {
+          totalInterest += interest;
+          investedCapital += annualInvestment;
+          return (
+            <tr key={year}>
+              <td>{year}</td>
+              <td>{valueEndOfYear}</td>
+              <td>{interest}</td>
+              <td>{totalInterest}</td>
+              <td>{investedCapital}</td>
+            </tr>
+          );
+        })}
+      </tbody>
     </table>
   );
 }
