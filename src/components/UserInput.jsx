@@ -3,7 +3,7 @@ export default function UserInput({ children, value, onChange }) {
     <div className="input-group">
       <label htmlFor="">
         {children}
-        <input type="number" onChange={onChange} value={value} />
+        <input type="number" onChange={onChange} value={value} required />
       </label>
     </div>
   );

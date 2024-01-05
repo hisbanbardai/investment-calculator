@@ -4,10 +4,12 @@ import UserInput from "./components/UserInput";
 import { calculateInvestmentResults } from "./util/investment";
 
 function App() {
-  const [initialInvestment, setInitialInvestment] = useState(0);
-  const [annualInvestment, setAnnualInvestment] = useState(0);
-  const [expectedReturn, setExpectedReturn] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [initialInvestment, setInitialInvestment] = useState(10000);
+  const [annualInvestment, setAnnualInvestment] = useState(1200);
+  const [expectedReturn, setExpectedReturn] = useState(6);
+  const [duration, setDuration] = useState(10);
+
+  const isValidData = duration >= 1;
 
   function handleInitialInvestmentInputChange(event) {
     setInitialInvestment(Number(event.target.value));
@@ -24,17 +26,6 @@ function App() {
   function handleDurationInputChange(event) {
     setDuration(Number(event.target.value));
   }
-
-  console.log(initialInvestment, annualInvestment, expectedReturn, duration);
-
-  // const results = calculateInvestmentResults({
-  //   initialInvestment,
-  //   annualInvestment,
-  //   expectedReturn,
-  //   duration,
-  // });
-
-  // console.log(duration);
 
   return (
     <>
@@ -61,12 +52,17 @@ function App() {
           DURATION
         </UserInput>
       </div>
-      <Result
-        initialInvestment={initialInvestment}
-        annualInvestment={annualInvestment}
-        expectedReturn={expectedReturn}
-        duration={duration}
-      />
+      {!isValidData && (
+        <p className="center">Please enter a duration greater than 0.</p>
+      )}
+      {isValidData && (
+        <Result
+          initialInvestment={initialInvestment}
+          annualInvestment={annualInvestment}
+          expectedReturn={expectedReturn}
+          duration={duration}
+        />
+      )}
     </>
   );
 }

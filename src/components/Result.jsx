@@ -36,10 +36,10 @@ export default function Result({
           return (
             <tr key={year}>
               <td>{year}</td>
-              <td>{formatter.format(Math.round(valueEndOfYear))}</td>
-              <td>{formatter.format(Math.round(interest))}</td>
-              <td>{formatter.format(Math.round(totalInterest))}</td>
-              <td>{formatter.format(Math.round(investedCapital))}</td>
+              <td>{formatter.format(valueEndOfYear)}</td>
+              <td>{formatter.format(interest)}</td>
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(investedCapital)}</td>
             </tr>
           );
         })}
